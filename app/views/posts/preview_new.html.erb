@@ -1,0 +1,17 @@
+
+
+<%=form_with model: @post, local: true do |f| %>
+<aside>
+  <h1 class="post_title"> 
+    <%= @post.title %> 
+    <%= f.hidden_field :title %>
+  </h1>
+  <div class="content">
+    <%= simple_format(@post.content) %>
+    <%= f.hidden_field :content %>
+  </div>
+</aside>
+<%= f.submit '戻る', name: 'back', class: 'btn btn-secondary mr-3', id: 'preview_back' %>
+<%= f.submit '登録', class: 'btn btn-primary', id: 'preview_create' %>
+
+<% end %>

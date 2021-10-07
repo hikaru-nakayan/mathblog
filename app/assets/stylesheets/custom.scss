@@ -170,6 +170,10 @@ input {
     width: 100px;
 }
 
+#preview_btn {
+    width: 100px;
+}
+
 #error_explanation {
     color: red;
     ul {
@@ -197,6 +201,16 @@ input {
   #session_remember_me {
     width: auto;
     margin-left: 0;
+  }
+
+  #preview_back{
+      width: 100px;
+      margin-left: 20px;
+  }
+
+  #preview_create{
+      width: 100px;
+      float: left;
   }
 
   /* Users index */

@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   get '/signup', to: 'users#new'
   resources :users
-  resources :posts
+  resources :posts do
+    post :preview, action: :preview_new, on: :new
+    get :preview, action: :preview_new, on: :new
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

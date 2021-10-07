@@ -6,15 +6,31 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def preview_new
+    @post = current_user.posts.new(post_params)
+    render :new unless @post.valid? 
+  end
+
   def show
     @post = Post.find(params[:id])
   end
 
   def create
     @post = current_user.posts.new(post_params)
+
+    if params[:preview].present?
+      render :preview_new
+      return
+    end
+
+    if params[:back].present?
+      render :new
+      return
+    end
+
     if @post.save
       flash[:success] = "記事を作成しました。"
-      redirect_to users_path(current_user)
+      redirect_to root_url
     else
       render :new
     end
