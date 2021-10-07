@@ -1,0 +1,15 @@
+<li id="post-<%= post.id %>">
+  <%= link_to gravatar_for(post.user, size: 50), post.user %>
+  <span class="user"><%= post.user.name %></span> <br>
+  <span class="title"><%= link_to post.title, post_path(post) %></span>
+  <span class="timestamp">
+     <%= time_ago_in_words(post.created_at) %> 前に投稿
+     <% if current_user?(post.user) %>
+     <div id='delete_edit'>
+     <%= link_to "編集", edit_post_path(post) %>
+     <%= link_to "削除", post, method: :delete,
+                                       data: { confirm: "削除します。よろしいですか？" } %>
+     </div>
+    <% end %>
+  </span>
+</li>

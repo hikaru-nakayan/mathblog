@@ -1,0 +1,10 @@
+<aside>
+  <section class="user_info">
+    <h1>
+     <%= link_to gravatar_for(@post.user, size: 80), @post.user %>
+    <div class="user_name"><%= @post.user.name %></div>
+    </h1>
+  </section>
+  <h1 class="post_title"> <%= @post.title %> </h1>
+  <div class="content"><%= simple_format(@post.content) %></div>
+</aside>

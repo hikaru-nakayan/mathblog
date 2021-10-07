@@ -9,6 +9,8 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+
+
 body {
     padding-top: 60px;
 }
@@ -64,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.7em;
     color: #fff;
     letter-spacing: -1px;
-    padding-top: 9px;
+    padding-top: 10px;
     font-weight: normal;
   }
   
@@ -72,6 +74,16 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     text-decoration: none;
   }
+
+  #make-post {
+      color: #66cc99;
+  }
+
+  header {
+      height: 60px;
+  }
+
+
 /* footer */
 
 footer {
@@ -106,7 +118,7 @@ footer {
 
 aside {
     section.user_info {
-      margin-top: 20px;
+      margin-top: 50px;
     }
     section {
       padding: 10px 0;
@@ -146,10 +158,16 @@ input, textarea, select, .uneditable-input {
     width: 100%;
     margin-bottom: 15px;
     @include box_sizing;
+    
 }
   
 input {
     height: auto !important;
+    
+}
+
+#post_btn{
+    width: 100px;
 }
 
 #error_explanation {
@@ -191,4 +209,83 @@ input {
       padding: 10px 0;
       border-bottom: 1px solid $gray-lighter;
     }
+  }
+
+/* home */
+
+aside {
+    ul.select_order{
+        margin-top: 65px;
+        li {
+            margin: 15px 0;
+            list-style: none;
+            margin-left: -30px;
+            font-size: 17px;
+        }
+    }
+}
+
+
+/* posts */
+
+.posts {
+    list-style: none;
+    padding: 0;
+    li {
+      padding: 10px 0;
+      border-top: 1px solid #e8e8e8;
+    }
+    .user {
+      margin-top: 5em;
+      padding-top: 0;
+    }
+    .content {
+      display: block;
+      margin-left: 60px;
+      img {
+        display: block;
+        padding: 5px 0;
+      }
+    }
+    .timestamp {
+      color: $gray-light;
+      display: block;
+      margin-left: 60px;
+    }
+    .gravatar {
+      float: left;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+  }
+  
+  aside {
+    textarea {
+      height: 100px;
+      margin-bottom: 5px;
+    }
+  }
+  
+  span.image {
+    margin-top: 10px;
+    input {
+      border: 0;
+    }
+  }
+
+
+  #post_content {
+      height: 70vh;
+  }
+
+  aside {
+      h1.post_title{
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eaeaea;
+        font-size: 3rem;
+      }
+  }
+
+  #delete_edit{
+      float: right;
   }

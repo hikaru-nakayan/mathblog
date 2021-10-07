@@ -3,8 +3,10 @@
         <%= link_to "数学Stocker", root_path, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+                <li> <%= link_to "作成する", new_post_path, class: 'btn btn-outline-success', id: "make-post" %> </li>
+            <% end %>
             <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Help", help_path %></li>
             <% if logged_in? %>
                 <li><%= link_to "Users", users_path %></li>
                 <li class="dropdown">
