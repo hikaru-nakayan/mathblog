@@ -6,6 +6,9 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def index
+  end
+
   def preview_new
     @post = current_user.posts.new(post_params)
     render :new unless @post.valid? 

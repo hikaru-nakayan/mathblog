@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
-    @posts = Post.all
+    @q = Post.all.ransack(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
   def help
