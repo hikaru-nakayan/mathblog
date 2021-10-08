@@ -76,12 +76,39 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   #make-post {
-      color: #66cc99;
+      
+      float: left;
+      margin-right: 8px;
   }
+  #make-post-2{
+    color: #66cc99;
+    float: right;
+  }
+
+  #home-icon {
+      
+    float: left;
+    margin-right: 8px;
+}
+#home-icon-2{
+  float: right;
+  color: #fff;
+}
 
   header {
       height: 60px;
+  //     .contaner{
+  //       nav {
+  //         ul {
+  //           li {
+  //             float: left;
+  //           }
+  //         }
+  //       }
+  //     }
   }
+
+  
 
 
 /* footer */
