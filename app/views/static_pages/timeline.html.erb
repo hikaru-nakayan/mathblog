@@ -1,0 +1,21 @@
+<div class="row">
+    <aside class="col-md-2">
+        <ul class="select_order">
+             <li><%= link_to "新着", root_path %> </li>
+             <li><%= link_to "タイムライン", timeline_path %></li>
+             <li><%= link_to "ブックマーク", '#' %></li>
+        </ul>
+    </aside>
+    <div class="col-md-8">
+            <h2>タイムライン</h2>
+            <% if @feed_items.present? %>
+            <ol class="posts">
+            <%= render 'shared/feed' %>
+            </ol>
+            <% else %>
+            記事はありません。
+            <% end %>
+    </div>
+    <aside class="col-md-2">
+    </aside>
+</div>

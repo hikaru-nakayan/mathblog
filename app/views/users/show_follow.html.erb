@@ -1,0 +1,31 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= gravatar_for @user %>
+      <h1><%= @user.name %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+      <span><b>Posts:</b> <%= @user.posts.count %></span>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <% @users.each do |user| %>
+            <li>
+            <%= gravatar_for user, size: 50 %>
+            <%= link_to user.name, user %>
+            <% if current_user.admin? && !current_user?(user) %>
+        |       <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
+            <% end %>
+            </li>
+        <% end %>
+      </ul>
+      <%= will_paginate :previous_label => ' &lt 前へ', :next_label => '次へ &gt'%>
+    <% end %>
+  </div>
+</div>

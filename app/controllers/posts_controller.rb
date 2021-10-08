@@ -16,6 +16,24 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+
+        # PDF文書を作成
+        pdf = Prawn::Document.new
+
+        pdf.font "app/assets/fonts/ipaexm.ttf" 
+
+        # PDFに "Hello, world!!" と表示する
+        pdf.text "#{@post.content}"
+
+        send_data pdf.render,
+          filename:    "#{@post.id}.pdf",
+          type:        "application/pdf",
+          disposition: "inline"
+      end
+    end
   end
 
   def create

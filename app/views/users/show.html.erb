@@ -6,8 +6,12 @@
             <h1><%= @user.name %></h1>
             <span><%= pluralize(@user.posts.count, "投稿") %></span>
         </section>
+        <section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
     </aside>
     <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
     <% if @user.posts.any? %>
       <h3>投稿 (<%= @user.posts.count %>)</h3>
       <ol class="posts">

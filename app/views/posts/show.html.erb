@@ -5,6 +5,7 @@
     <div class="user_name"><%= @post.user.name %></div>
     </h1>
   </section>
+  <%= link_to "PDF出力", post_path(@post, format: "pdf") %>
   <h1 class="post_title"> <%= @post.title %> </h1>
   <div class="content"><%= simple_format(@post.content) %></div>
 </aside>
