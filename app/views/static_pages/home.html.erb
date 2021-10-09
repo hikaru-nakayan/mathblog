@@ -1,12 +1,7 @@
 <% if logged_in? %>
 <div class="row">
-    <aside class="col-md-2">
-        <ul class="select_order">
-             <li><%= link_to "新着", root_path %> </li>
-             <li><%= link_to "タイムライン", timeline_path %></li>
-             <li><%= link_to "ブックマーク", '#' %></li>
-        </ul>
-    </aside>
+    <%= render "side" %>
+    
     <div class="col-md-8">
         <%= search_form_for @q, class: 'mb-5', url: root_path do |f| %>
             <div class="row">

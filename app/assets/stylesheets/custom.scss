@@ -63,11 +63,17 @@ h1, h2, h3, h4, h5, h6 {
   #logo {
     float: left;
     margin-right: 10px;
+    margin-left: 10px;
     font-size: 1.7em;
     color: #fff;
     letter-spacing: -1px;
     padding-top: 10px;
     font-weight: normal;
+  }
+
+  #math_logo {
+    float: left;
+    margin-top: 7px;
   }
   
   #logo:hover {
@@ -296,9 +302,9 @@ aside {
     ul.select_order{
         margin-top: 65px;
         li {
-            margin: 15px 0;
+            margin: 20px 0;
             list-style: none;
-            margin-left: -30px;
+            
             font-size: 17px;
             a {
                 color: black;
@@ -307,9 +313,14 @@ aside {
             a:hover{
                 color: skyblue;
             }
-        }
+          
+          }
+          .damy {
+            clear: both;
+          }
     }
-}
+  }
+
 
 .col-md-8{
     .row{
@@ -328,7 +339,39 @@ aside {
         }
     }
 }
+#new-icon{
+  float: left;
+  margin-left: -20px;
+}
 
+#new-icon-2{
+  float: left;
+  margin-left: 10px;
+}
+
+#timeline-icon{
+  margin-left: -20px;
+  float: left;
+  
+  
+}
+
+#timeline-icon-2{
+  float: left;
+  margin-left: 10px;
+}
+
+#bookmark-icon{
+  float: left;
+  margin-left: -20px;
+  
+  
+}
+
+#bookmark-icon-2{
+  float: left;
+  margin-left: 10px;
+}
 
 /* posts */
 
@@ -392,4 +435,11 @@ aside {
 
   #delete_edit{
       float: right;
+  }
+
+  /* follow */
+  
+  #follow-btn {
+    width: 100px;
+    margin-top: 10px;
   }

@@ -7,8 +7,12 @@ class StaticPagesController < ApplicationController
   def timeline
     if logged_in?
       @post  = current_user.posts.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
+      @feed_items = current_user.feed.paginate(page: params[:page]).per_page(10)
     end
+  end
+
+  def bookmark
+    @bookmarks = Bookmark.where(user_id: current_user.id)
   end
 
   def help

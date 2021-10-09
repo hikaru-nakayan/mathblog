@@ -1,0 +1,24 @@
+<aside class="col-md-2">
+        <ul class="select_order">
+             <li>
+             <%= link_to  root_path do %> 
+                <%= image_tag 'new_icon.png', width: 20, height: 20, id: "new-icon"  %>
+                <div id="new-icon-2">新着</div>
+             <% end %>
+             </li>
+             <div class='damy'></div>
+             <li>
+             <%= link_to  timeline_path do %> 
+                <%= image_tag 'timeline.png', width: 20, height: 20, id: "timeline-icon"  %>
+                <div id="timeline-icon-2">タイムライン</div>
+             <% end %>
+             </li>
+             <div class='damy'></div>
+             <li>
+             <%= link_to  bookmark_path do %> 
+                <%= image_tag 'bookmark.png', width: 20, height: 20, id: "bookmark-icon"  %>
+                <div id="bookmark-icon-2">ブックマーク</div>
+             <% end %>
+             </li>
+        </ul>
+</aside>

@@ -5,7 +5,15 @@
     <div class="user_name"><%= @post.user.name %></div>
     </h1>
   </section>
-  <%= link_to "PDF出力", post_path(@post, format: "pdf") %>
+  <%= link_to "PDF出力", post_path(@post, format: "pdf") %><br>
+  <% if current_user?(@post.user) %>
+  <%= link_to "編集", edit_post_path(@post) %>
+  <% end %>
+  <% if @post.bookmarked_by?(current_user) %>
+      <td><%= link_to "ブックマークを外す", post_bookmarks_path(@post), method: :delete %></td>
+    <% else %>
+      <td><%= link_to "ブックマーク", post_bookmarks_path(@post), method: :post %></td>
+    <% end %>
   <h1 class="post_title"> <%= @post.title %> </h1>
   <div class="content"><%= simple_format(@post.content) %></div>
 </aside>

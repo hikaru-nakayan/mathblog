@@ -1,0 +1,14 @@
+<div class="row">
+    <%= render "side" %>
+    <div class="col-md-8">
+            <h2>ブックマーク</h2>
+            <ol class="posts">
+            <% @bookmarks.each do |bookmark| %>
+                <% @post = bookmark.post %>
+                <%= render @post %>
+            <% end %>
+            </ol>
+    </div>
+    <aside class="col-md-2">
+    </aside>
+</div>
