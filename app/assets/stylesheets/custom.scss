@@ -103,15 +103,6 @@ h1, h2, h3, h4, h5, h6 {
 
   header {
       height: 60px;
-  //     .contaner{
-  //       nav {
-  //         ul {
-  //           li {
-  //             float: left;
-  //           }
-  //         }
-  //       }
-  //     }
   }
 
   
@@ -398,6 +389,7 @@ aside {
       color: $gray-light;
       display: block;
       margin-left: 60px;
+      font-size: 11px;
     }
     .gravatar {
       float: left;

@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def preview_new
     @post = current_user.posts.new(post_params)
-    render :new unless @post.valid? 
+    #render :new unless @post.valid? 
   end
 
   def show
@@ -64,6 +64,17 @@ class PostsController < ApplicationController
   end
 
   def update
+
+    if params[:preview].present?
+      render :preview_new
+      return
+    end
+
+    if params[:back].present?
+      render :edit
+      return
+    end
+
     if @post.update(post_params)
       flash[:success] = "記事を編集しました。"
       redirect_to root_url
